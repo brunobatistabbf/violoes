@@ -6,6 +6,7 @@ class violao(metaclass= ABCMeta):
     def __init__(self):
         self.material = None
         self.numero_cordas = None
+        self.nivel = None
 
     @abstractmethod
     def tocar(self):
