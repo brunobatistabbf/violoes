@@ -1,15 +1,15 @@
-from abc import ABCMeta, abstractmethod
-import copy
-from prototype import violao
-from violoes import violao_classico, violao_flet, violao_folk, violao_zero, violao_jumbo, violao_duplo_zero, violao_triplo_zero, violao_12_cordas, violao, violao_7_cordas
+from violoes import (
+    violao_classico, violao_flet, violao_folk, violao_zero, violao_jumbo,
+    violao_duplo_zero, violao_triplo_zero, violao_12_cordas, violao_7_cordas
+)
 
 class violoes_cache:
     cache = {}
 
     @staticmethod
     def get_violao(sid):
-        VIOLAO = violoes_cache.cache.get(sid, None)
-        return  VIOLAO.clone()
+        violao = violoes_cache.cache.get(sid, None)
+        return violao.clone() if violao else None
 
     @staticmethod
     def load():
